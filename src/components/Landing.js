@@ -1,12 +1,18 @@
-import React from 'react'
+import React from "react";
+import { FiArrowRight, FiPlay } from "react-icons/fi";
 
-export const Landing = () => {
-  return (
-    <div className='absolute top-1/4 rounded-3xl p-5  border border-sky-800 text-center sm:left-[10%] z-30 sm:w-1/2 w-full h-1/2 bg-transparent'>
-        <h1 className=' uppercase font-bold text-5xl'>Travel now</h1>
-        <p className='font-bold p-3 text-2xl'>feel natural</p>
-        <p className='text-3xl'>Enjoy your summer vacation with the most amazing scenery</p>
-        <button className=' w-40 h-10 text-xl rounded-xl text-white bg-cyan-500 hover:bg-cyan-300 p-1 mt-6 relative'>Get Started</button>
+/** Hero copy that appears once the video window has opened up. */
+export const Landing = ({ visible }) => (
+  <div className={`landing-card ${visible ? "is-in" : ""}`}>
+    <p className="font-mono text-xs uppercase tracking-[0.3em] text-sea">● Summer ’26 collection</p>
+    <h1 className="mt-4 font-display text-5xl font-extrabold uppercase leading-[0.9] text-white sm:text-7xl">
+      Travel now<span className="text-coral">.</span>
+    </h1>
+    <p className="mt-3 font-hand text-4xl text-sand">feel natural</p>
+    <p className="mt-4 max-w-md text-lg text-white/80">Enjoy your summer vacation with the most amazing scenery — planned end to end, so you only have to show up.</p>
+    <div className="mt-7 flex flex-wrap gap-3">
+      <a href="#contact" className="btn-pill bg-sea text-ink hover:bg-white">Get Started <FiArrowRight /></a>
+      <a href="#destinations" className="btn-pill border border-white/40 text-white hover:bg-white hover:text-ink"><FiPlay /> Explore places</a>
     </div>
-  )
-}
+  </div>
+);

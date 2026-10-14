@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ink font-body text-ink antialiased; }
+  ::selection { @apply bg-coral text-white; }
+  section[id] { scroll-margin-top: 0; }
+}
+
+@layer components {
+  .btn-pill {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 active:scale-95;
+  }
+  .round-btn {
+    @apply grid h-9 w-9 place-items-center rounded-full border border-ink/15 bg-white transition hover:border-ink disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .field-box {
+    @apply relative flex flex-col gap-1 bg-paper p-6 transition-colors;
+  }
+  .field-box:hover { @apply bg-white; }
+  .field-box > span { @apply font-mono text-[11px] uppercase tracking-[0.25em] text-ink/45; }
+  .field-box > small { @apply text-sm text-ink/55; }
+  .field-select {
+    @apply w-full cursor-pointer appearance-none bg-transparent text-sm font-semibold text-ink/70 outline-none;
+  }
+}
